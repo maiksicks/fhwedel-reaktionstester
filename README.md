@@ -41,3 +41,28 @@ Das Ergebnis wird ebenfalls mit Hilfe der LEDs angezeigt:
 1 LED => ab 700ms
 
 Das Ergebnis wird 5 Sekunden lang angezeigt, danach schalten sich die LEDs aus und man kann einen neuen Test starten, in dem man den Taster drückt.
+
+## Wartung
+
+Der Reaktionstester ist wartungsfrei. 
+
+## Weiterentwicklung
+
+**Verbesserung der Ausgabe**
+- LCD Display
+- Audioausgabe
+- Farbige LEDs
+
+**Verbesserung des Aufbaus**
+- Löten einer Platine
+- Gehäuse
+
+**Änderung der Eingabe**
+- Mehrere Taster
+- Touch-Display
+
+**Änderung der Funktionsweise**
+- Challenge Mode (Mehrspieler)
+- Online Score-Abgleich
+- Statistiken
+- Andere Reaktionstest-Art (z.B.: Taster nur drücken, wenn 2 LEDs leuchten)
