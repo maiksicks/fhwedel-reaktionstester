@@ -52,6 +52,7 @@ Der Reaktionstester ist wartungsfrei.
 - LCD Display
 - Audioausgabe
 - Farbige LEDs
+- Weitere Startanimation
 
 **Verbesserung des Aufbaus**
 - Löten einer Platine
