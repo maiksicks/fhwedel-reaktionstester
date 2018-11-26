@@ -16,7 +16,7 @@ Grundlage des Reaktionstesters ist ein Arduino UNO. Der Tester soll auf einem St
 
 **Nachbau**
 
-- Material: Arduino UNO, diverse Kabel, Steckbrett, 7 LEDs, 7x 220Ω Widerstand, 1x 10kΩ Widerstand, Computer mit USB-Anschluss (zur einmaligen Installation der Software)
+- Material: Arduino UNO, diverse Kabel, Steckbrett, 7 LEDs, 7x 220Ω Widerstand, 1x 10kΩ Widerstand, Taster (NO), Computer mit USB-Anschluss (zur einmaligen Installation der Software)
 - Software: z.B.: [Arduino IDE](https://www.arduino.cc/en/Main/Software)
 
 **Weiterentwicklung**
