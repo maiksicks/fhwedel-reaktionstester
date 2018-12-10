@@ -1,11 +1,17 @@
+// CONFIG BELOW
+
 const int firstLed = 6;
 const int lastLed = 12;
+
+// set test mode
+const boolean testmode = true;
+
+// PROGRAM CODE BELOW
 
 int countdown = 0;
 int reaction = 0;
 
 boolean off = true;
-
 
 void setup() {
   // set all led pinouts
@@ -13,8 +19,60 @@ void setup() {
     pinMode(i, OUTPUT);
   }
 
-  // start-animation
+
+  if (testmode) {
+    test();
+  } else {
+    // start-animation
+    start();
+  }
+}
+
+void test() {
+  // test all LEDs working
+  allLedOn(firstLed, lastLed);
+  delay(1000);
+  allLedOff(firstLed, lastLed);
+  delay(1000);
+
+  // test each LED working
+  for (int i = firstLed; i <= lastLed; i++) {
+    digitalWrite(i, HIGH);
+    delay(1000);
+    digitalWrite(i, LOW);
+  }
+  delay(1000);
+
+
+  // test switch working
+  test_menu_indicator(0);
+  allLedOn(firstLed, lastLed);
+  while (digitalRead(2) == LOW) {
+    1;
+  }
+  allLedOff(firstLed, lastLed);
+  delay(1000);
+
+  // test start animation
+  test_menu_indicator(1);
   start();
+  delay(1000);
+
+  // set reaction test to exact output and start it
+  test_menu_indicator(2);
+  startReaction();
+
+  test_menu_indicator(3);
+  // start normally with exact output
+}
+
+void test_menu_indicator(int menu) {
+  for (int i = firstLed; i <= firstLed + menu; i++) {
+    digitalWrite(i, HIGH);
+  }
+  delay(1000);
+  allLedOff(firstLed, lastLed);
+  delay(500);
 }
 
 void start() {
@@ -83,7 +141,54 @@ void startReaction() {
 
   delay(500);
 
-  // print score  
+  if (testmode) {
+    print_score_exactly(score);
+  } else {
+    print_score_userfriendly(score);
+  }
+}
+
+void print_score_exactly(int score) {
+  if (score > 9999) {
+    allLedOn(firstLed, lastLed);
+    delay(3000);
+  } else {
+  
+    int digit_1 = score / 1000;
+    int digit_2 = score % 1000 / 100;
+    int digit_3 = score % 100 / 10;
+    int digit_4 = score % 10;
+
+    ledBlink(lastLed - 3, digit_1);
+    delay(1000);
+    ledBlink(lastLed - 2, digit_2);
+    delay(1000);
+    ledBlink(lastLed - 1, digit_3);
+    delay(1000);
+    ledBlink(lastLed, digit_4);
+    delay(1000);
+
+    allLedOn(firstLed, lastLed);
+    delay(1000);
+    
+  }
+
+  allLedOff(firstLed, lastLed);
+  delay(1000);
+  
+}
+
+void ledBlink(int led, int count) {
+  for (int i = 0; i < count; i++) {
+      digitalWrite(led, HIGH);
+      delay(250);
+      digitalWrite(led, LOW);
+      delay(250);
+    }
+}
+
+void print_score_userfriendly(int score) {
+  
   if (score < 200) {
     for (byte i = firstLed; i <= lastLed; i++) {
       digitalWrite(i, HIGH);
