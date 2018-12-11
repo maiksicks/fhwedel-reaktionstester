@@ -44,7 +44,8 @@ Das Ergebnis wird 5 Sekunden lang angezeigt, danach schalten sich die LEDs aus u
 
 ## Wartung
 
-**Der Reaktionstester ist wartungsfrei.** Wer jedoch trotzdem testen möchte, kann die Variable **testmode** auf **true** setzen.
+**Der Reaktionstester ist wartungsfrei.** Wer jedoch trotzdem testen möchte, kann die in der Setter-Methode **rt.setTestMode()** eingetragene Variable auf **true** setzen.
+
 Nach dem Überspielen wird eine Testfunktion ausgeführt, mit der man alle Ein- und Ausgaben prüfen kann.
 
 _Die Tests 1 bis 4 werden durch das Leuchten von entsprechend vielen LEDs signalisiert._
@@ -53,9 +54,7 @@ _Die Tests 1 bis 4 werden durch das Leuchten von entsprechend vielen LEDs signal
 - Test 1 => Prüfung des Taster. Alle LEDs leuchten, bis der Taster gedrückt wurde.
 - Test 2 => Prüfung der Startanimation (einfacher Durchlauf).
 - Test 3 => Reaktionstest mit geänderter Ausgabe: Die Ausgabe erfolgt durch blinkende LEDs: Die 4 ersten LEDs stehen für die Ziffern einer Zahl. Blinken die Lampen folgendermaßen: (1x)(2x)(7x)(9x) ergibt dieses die Reaktionszeit in Millisekunden: 1279
-- Test 4 => Normaler Reaktionstester-Betrieb mit geänderter Ausgabe (kann beliebig oft wiederholt werden).
-
-Um den Testmodus zu beenden, muss lediglich die **testmode** Variable auf **false** gesetzt und das Sketch erneut hochgeladen werden.
+- Test 4 => Normaler Reaktionstester-Betrieb (kann beliebig oft wiederholt werden).
 
 ## Weiterentwicklung
 
