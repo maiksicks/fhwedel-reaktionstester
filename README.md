@@ -1,5 +1,7 @@
 # Reaktionstester
 
+**Letztes Update: 11.12.2018**
+
 ![Bild](https://raw.githubusercontent.com/maiksicks/fhwedel-reaktionstester/master/images/reaktionstester_steckplatine.png)
 
 ## Aufgabe
