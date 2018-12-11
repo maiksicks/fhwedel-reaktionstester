@@ -14,7 +14,7 @@ Reaktionstester rt(BUTTON_PIN, LED_PINS, LED_COUNT);
 void setup() {
 
   // OPTIONAL: set test mode (default: false)
-  rt.setTestMode(true);
+  rt.setTestMode(false);
 
   // OPTIONAL: set start animation (default: 1)
   rt.setStartAnimation(1);
@@ -29,7 +29,7 @@ void setup() {
   rt.setInvertButtonPin(true);
 
   // OPTIONAL: enable debugging over serialport (default: false[, 9600])
-  rt.setDebugOverSerial(true, 9600);
+  rt.setDebugOverSerial(false, 9600);
 
   // OPTIONAL: switch score output between "normal" and "exact" (default: "normal")
   rt.setScoreOutputType("normal");
