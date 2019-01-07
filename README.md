@@ -44,6 +44,11 @@ Das Ergebnis wird ebenfalls mit Hilfe der LEDs angezeigt:
 
 Das Ergebnis wird 5 Sekunden lang angezeigt, danach schalten sich die LEDs aus und man kann einen neuen Test starten, in dem man den Taster drückt.
 
+## Einstellungen
+
+**setTestMode**(<bool>testmode) 
+(de)aktiviert den Testmodus. 
+
 ## Wartung
 
 **Der Reaktionstester ist wartungsfrei.** Wer jedoch trotzdem testen möchte, kann die in der Setter-Methode **rt.setTestMode()** eingetragene Variable auf **true** setzen.
