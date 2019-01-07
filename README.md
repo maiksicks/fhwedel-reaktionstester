@@ -44,11 +44,32 @@ Das Ergebnis wird ebenfalls mit Hilfe der LEDs angezeigt:
 
 Das Ergebnis wird 5 Sekunden lang angezeigt, danach schalten sich die LEDs aus und man kann einen neuen Test starten, in dem man den Taster drückt.
 
-## Einstellungen
+## Einstellungen (optional)
 
-**setTestMode**(<bool>testmode) 
-(de)aktiviert den Testmodus. 
+**setTestMode**(< _bool_ >testmode) - default: (false)
+- Aktiviert und deaktiviert den Testmodus. 
+  
+**setStartAnimation**(< _int_ >animation) - default: (1)
+- Setzt die Startanimation.
+- Weitere Startanimationen hinzufügen: Datei _reaktionstester.cpp_, Methode: _Reaktionstester::runStartAnimation()_
 
+**setRandomReactionTime**(< _int_ >minTime, < _int_ >maxTime) - default: (500, 5000)
+- Setzt die Grenzen der Wartezeit, wo der Nutzer auf die Reaktion wartet.
+  
+**setInvertLedPins**(< _bool_ >invertLeds) - default: (false)
+- Invertiert die LED Pins, d.h. LOW und HIGH (bzw. an und aus) werden vertauscht.
+  
+**setInvertButtonPin**(< _bool_ >invertButton) - default: (false)
+- Invertiert das Input. Für Pull-Up auf _true_ setzen, für Pull-Down auf _false_.
+  
+**setDebugOverSerial**(< _bool_ >enable[, < _int_ >port]) - defualt: (false[, 9600])
+- Aktiviert oder deaktiviert den Debug-Modus über den USB-Serialport.
+  
+**setScoreOutputType**(< _String_ >outputType) - default: ("normal")
+- Setzt die Art der Ausgabe des erreichten "Scores".
+- Mögliche Optionen sind "normal" und "exact".
+- Der Exact-Modus (geänderte Ausgabe) wird im Punkt _Wartung_ bei _Test 3_ erklärt.
+  
 ## Wartung
 
 **Der Reaktionstester ist wartungsfrei.** Wer jedoch trotzdem testen möchte, kann die in der Setter-Methode **rt.setTestMode()** eingetragene Variable auf **true** setzen.
